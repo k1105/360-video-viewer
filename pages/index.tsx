@@ -16,7 +16,9 @@ function Sphere({ videoRef }: { videoRef: React.RefObject<HTMLVideoElement> }) {
     <mesh ref={meshRef}>
       <sphereGeometry args={[500, 60, 40]} />
       <meshBasicMaterial side={THREE.BackSide}>
-        <videoTexture attach="map" args={[videoRef.current!]} />
+        {videoRef.current && (
+          <videoTexture attach="map" args={[videoRef.current]} />
+        )}
       </meshBasicMaterial>
     </mesh>
   );

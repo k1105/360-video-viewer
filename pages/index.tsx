@@ -51,9 +51,16 @@ export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play();
-    }
+    const playVideo = async () => {
+      if (videoRef.current) {
+        try {
+          await videoRef.current.play();
+        } catch (error) {
+          console.error("Video playback failed:", error);
+        }
+      }
+    };
+    playVideo();
   }, []);
 
   return (

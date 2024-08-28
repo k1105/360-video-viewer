@@ -62,7 +62,7 @@ export default function Home() {
       </Canvas>
       <video
         ref={videoRef}
-        src="video/baba-sotsusei.mp4"
+        src="/video/baba-sotsusei.mp4"
         autoPlay
         loop
         muted
